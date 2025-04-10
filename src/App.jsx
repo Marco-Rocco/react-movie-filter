@@ -9,8 +9,10 @@ function App() {
     console.log('filtrando film per ' + filterCategory)
 
     if (filterCategory === '') {
+      setFilteredMovies(originalMovies)
       console.log('mostro tutti i film')
     } else {
+      setFilteredMovies([])
       console.log('mostro categoria ' + filterCategory)
     }
 
