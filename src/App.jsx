@@ -2,21 +2,21 @@ import { useState, useEffect } from 'react';
 import originalMovies from './data/movies';
 
 function App() {
-  // const [movies, setMovies] = useState()
 
-  useEffect(() => {
-    console.log('nonnt');
-  }, []);
+  const [filterCategory, setFilterCategory] = useState('')
+
 
   return (
     <>
       <div className="container">
-        <select>
-          <option>select genre</option>
+
+        <select value={filterCategory} onChange={event => setFilterCategory(event.target.value)}>
+          <option value="">search for genre</option>
           {originalMovies.map((movie, index) =>
             <option key={index}>{movie.genre}</option>
           )}
         </select>
+        {filterCategory}
         <ul>
           {originalMovies.map((movie, index) =>
             <li key={index}>
