@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import originalMovies from './data/movies';
 
 function App() {
-
+  const [filteredMovies, setFilteredMovies] = useState(originalMovies)
   const [filterCategory, setFilterCategory] = useState('')
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function App() {
 
 
         <ul>
-          {originalMovies.map((movie, index) =>
+          {filteredMovies.map((movie, index) =>
             <li key={index}>
               {movie.title}
             </li>)}
