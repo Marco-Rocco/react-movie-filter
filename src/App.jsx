@@ -8,11 +8,13 @@ function App() {
   useEffect(() => {
     console.log('filtrando film per ' + filterCategory)
 
+    let result = filteredMovies.filter(movie => movie.genre.includes(filterCategory));
+
     if (filterCategory === '') {
       setFilteredMovies(originalMovies)
       console.log('mostro tutti i film')
     } else {
-      setFilteredMovies([])
+      setFilteredMovies(result)
       console.log('mostro categoria ' + filterCategory)
     }
 
